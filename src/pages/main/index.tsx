@@ -8,6 +8,7 @@ const Container2 = loadable(() => import('components/main/Container2'));
 const Container3 = loadable(() => import('components/main/Container3'));
 const Container4 = loadable(() => import('components/main/Container4'));
 const Container5 = loadable(() => import('components/main/Container5'));
+const CopyRight = loadable(() => import('components/common/CopyRight'));
 
 const Main: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ const Main: React.FC = () => {
         <Container4 />
         <Container5 />
       </ReactPageScroller>
+
+      <CopyRight />
     </Container>
   );
 };

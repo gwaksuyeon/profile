@@ -1,8 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import loadable from '@loadable/component';
-
-const CopyRight = loadable(() => import('components/common/CopyRight'));
 
 const Container1: React.FC = () => {
   return (
@@ -19,8 +16,6 @@ const Container1: React.FC = () => {
 
         <ImageLayout></ImageLayout>
       </Contents>
-
-      <CopyRight />
     </Container>
   );
 };
@@ -64,6 +59,7 @@ const Contents = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
+  max-width: 1280px;
   z-index: 1;
 `;
 
