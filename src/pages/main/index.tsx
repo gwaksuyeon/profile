@@ -17,7 +17,17 @@ const Main: React.FC = () => {
         <Container1 />
         <Container2 />
         <Container3 />
-        <Container4 />
+
+        {new Array(3).fill(0).map((obj: any, inx: number) => (
+          <Container4
+            key={`project-${inx}`}
+            direction={inx === 1 ? 'right' : 'left'}
+            title={'Lorem ipsum dolor sit amet'}
+            description={
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+            }
+          />
+        ))}
         <Container5 />
       </ReactPageScroller>
 

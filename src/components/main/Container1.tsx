@@ -27,8 +27,8 @@ const CircleAnimation = keyframes`
   }
 
   100% {
-    width: 70%;
-    padding-bottom: 70%;
+    width: 70vw;
+    padding-bottom: 70vw;
   }
 `;
 
@@ -45,13 +45,13 @@ const Container = styled.div`
 const Circle = styled.div`
   width: 0;
   position: absolute;
-  top: -35%;
-  right: -30%;
+  top: -24vw;
+  right: -32vw;
   background: #fddb3a;
   border-radius: 100%;
   padding-bottom: 0;
 
-  animation: ${CircleAnimation} 0.7s linear 0.2s forwards;
+  animation: ${CircleAnimation} 1s ease-in-out 0.1s forwards;
 `;
 
 const Contents = styled.div`
