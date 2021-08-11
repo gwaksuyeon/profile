@@ -13,7 +13,7 @@ const CopyRight = loadable(() => import('components/common/CopyRight'));
 const Main: React.FC = () => {
   return (
     <Container>
-      <ReactPageScroller>
+      <ReactPageScroller animationTimer={800}>
         <Container1 />
         <Container2 />
         <Container3 />
