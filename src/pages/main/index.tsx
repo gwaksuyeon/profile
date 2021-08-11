@@ -1,11 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import loadable from '@loadable/component';
+import ReactPageScroller from 'react-page-scroller';
+
+const Container1 = loadable(() => import('components/main/Container1'));
+const Container2 = loadable(() => import('components/main/Container2'));
+const Container3 = loadable(() => import('components/main/Container3'));
+const Container4 = loadable(() => import('components/main/Container4'));
+const Container5 = loadable(() => import('components/main/Container5'));
 
 const Main: React.FC = () => {
   return (
     <Container>
-      <p>메인</p>
+      <ReactPageScroller>
+        <Container1 />
+        <Container2 />
+        <Container3 />
+        <Container4 />
+        <Container5 />
+      </ReactPageScroller>
     </Container>
   );
 };
