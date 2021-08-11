@@ -69,20 +69,20 @@ const TextLayout = styled.div`
 `;
 
 const NameDescription = styled.p`
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 700;
 `;
 
 const Title = styled.p`
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   white-space: pre-line;
 `;
 
 const ImageLayout = styled.div`
-  flex: 0 0 20%;
+  flex: 0 0 30%;
   background: #fff;
-  padding-bottom: 20%;
+  padding-bottom: 30%;
 `;
 
 export default Container1;

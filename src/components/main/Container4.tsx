@@ -42,7 +42,7 @@ const BackGround = styled.div<any>`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #f4f9f9;
+  background: #f6f4e6;
   transform: ${(props: any) =>
     props.direction === 'left' ? 'skewX(-30deg)' : 'skewX(30deg)'};
 `;
