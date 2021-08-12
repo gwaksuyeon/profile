@@ -1,7 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
+
+import DeveloperJson from 'assets/lottieJson/developer.json';
+import SuccessJson from 'assets/lottieJson/success.json';
+import ComunicationJson from 'assets/lottieJson/comunication.json';
 
 const Container2: React.FC = () => {
+  const lottieOptions = (index: number) => {
+    const Options = {
+      animationData:
+        index === 0
+          ? DeveloperJson
+          : index === 1
+          ? SuccessJson
+          : ComunicationJson,
+      loop: true,
+      autoplay: true,
+      rendererSettings: {
+        className: 'lottie=icons', // svg에 적용
+        preserveAspectRatio: 'xMidYMid slice',
+      },
+    };
+
+    return Options;
+  };
+
   return (
     <Container>
       <Contents>
@@ -13,7 +37,9 @@ const Container2: React.FC = () => {
         <ContentsLayout>
           {new Array(3).fill(0).map((obj: any, inx: number) => (
             <ContentsBox key={`box-${inx}`}>
-              <ImageLayout />
+              <ImageLayout>
+                <Lottie options={lottieOptions(inx)} />
+              </ImageLayout>
               <BoxTitle>Lorem ipsum dolor</BoxTitle>
               <BoxText>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -85,7 +111,7 @@ const ContentsBox = styled.div`
 const ImageLayout = styled.div`
   width: 120px;
   height: 120px;
-  background: #52575d;
+  background: #fff;
   margin-bottom: 24px;
 `;
 

@@ -1,10 +1,14 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Container1: React.FC = () => {
+interface Props {
+  isAnimation: boolean;
+}
+
+const Container1: React.FC<Props> = ({ isAnimation }) => {
   return (
     <Container>
-      <Circle />
+      <Circle isAnimation={isAnimation} />
 
       <Contents>
         <TextLayout>
@@ -32,6 +36,18 @@ const CircleAnimation = keyframes`
   }
 `;
 
+const CircleEndAnimation = keyframes`
+  0 {
+    width: 70vw;
+    padding-bottom: 70vw;
+  }
+
+  100% {
+    width: 0;
+    padding-bottom: 0;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -42,7 +58,7 @@ const Container = styled.div`
   background: #f6f4e6;
 `;
 
-const Circle = styled.div`
+const Circle = styled.div<any>`
   width: 0;
   position: absolute;
   top: -24vw;
@@ -50,8 +66,9 @@ const Circle = styled.div`
   background: #fddb3a;
   border-radius: 100%;
   padding-bottom: 0;
-
-  animation: ${CircleAnimation} 1s ease-in-out 0.1s forwards;
+  animation: ${(props: any) =>
+      props.isAnimation ? CircleAnimation : CircleEndAnimation}
+    1s ease-in-out 0.1s forwards;
 `;
 
 const Contents = styled.div`

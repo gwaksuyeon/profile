@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import loadable from '@loadable/component';
 import ReactPageScroller from 'react-page-scroller';
@@ -9,12 +9,24 @@ const Container3 = loadable(() => import('components/main/Container3'));
 const Container4 = loadable(() => import('components/main/Container4'));
 const Container5 = loadable(() => import('components/main/Container5'));
 const CopyRight = loadable(() => import('components/common/CopyRight'));
+const Pagination = loadable(() => import('components/common/Pagination'));
 
 const Main: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [isAnimation, setIsAnimation] = useState<boolean>(false);
+
+  const onChangePage = (page: number) => {
+    setCurrentPage(page);
+    setIsAnimation(true);
+  };
+
   return (
     <Container>
-      <ReactPageScroller animationTimer={800}>
-        <Container1 />
+      <ReactPageScroller
+        animationTimer={800}
+        customPageNumber={currentPage}
+        pageOnChange={onChangePage}>
+        <Container1 isAnimation={isAnimation} />
         <Container2 />
         <Container3 />
 
@@ -32,6 +44,7 @@ const Main: React.FC = () => {
       </ReactPageScroller>
 
       <CopyRight />
+      <Pagination currentPage={currentPage} onClickPage={onChangePage} />
     </Container>
   );
 };
