@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 
 import { ROOT_ROUTE } from 'common/variable';
 
-const Main = loadable(() => import('pages/main'));
+const Main = loadable(() => import('pages'));
 
 const Root: React.FC = () => {
   return (
