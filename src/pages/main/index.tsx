@@ -16,13 +16,18 @@ const Main: React.FC<Props> = ({ isAnimation }) => {
 
       <Contents>
         <TextLayout>
-          <NameDescription>Lorem ipsum dolor sit.</NameDescription>
+          <NameDescription>
+            어, 빼어날 <span>수</span>, 예쁠 <span>연</span>?
+          </NameDescription>
           <Title>
-            Lorem ipsum dolor sit amet{'\n'}consectetur adipisicing elit.{' '}
+            빼어나고, 아름다운 코드를 위해 노력하는{'\n'}
+            프론트엔드 개발자 곽수연입니다
           </Title>
         </TextLayout>
 
-        <ImageLayout></ImageLayout>
+        <ImageLayout>
+          <img src={require('assets/image/avatar.png').default} alt="avatar" />
+        </ImageLayout>
       </Contents>
     </Container>
   );
@@ -86,24 +91,40 @@ const Contents = styled.div`
 
 const TextLayout = styled.div`
   text-align: right;
-  margin-right: 10%;
+  margin-right: 5%;
 `;
 
 const NameDescription = styled.p`
-  font-size: 36px;
+  font-family: 'Angmuburi';
+  font-size: 48px;
   font-weight: 700;
+  color: #fff;
+  text-shadow: -1px 0 #41444b, 0 1px #41444b, 1px 0 #41444b, 0 -1px #8e95a7,
+    1px 1px 5px #41444b;
+  margin-bottom: 20px;
+
+  span {
+    color: #fddb3a;
+  }
 `;
 
 const Title = styled.p`
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   white-space: pre-line;
 `;
 
 const ImageLayout = styled.div`
   flex: 0 0 30%;
-  background: #fff;
+  position: relative;
   padding-bottom: 30%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 `;
 
 export default Main;

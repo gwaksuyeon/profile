@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   /* font 설정 */
-  font-family: 'NotoSans', serif;
+  font-family: 'NotoSans', 'Angmuburi', serif;
   font-size: 14px;
   font-weight: 400;
   color: #41444b;

@@ -2,50 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 
-import {
-  DeveloperJson,
-  SuccessJson,
-  ComunicationJson,
-} from 'assets/lottieJson';
+import { STRENGHTS_DATA } from 'common/variable';
 
 const Strenghts: React.FC = () => {
-  const lottieOptions = (index: number) => {
-    const Options = {
-      animationData:
-        index === 0
-          ? DeveloperJson
-          : index === 1
-          ? SuccessJson
-          : ComunicationJson,
-      loop: true,
-      autoplay: true,
-      rendererSettings: {
-        className: 'lottie=icons', // svg에 적용
-        preserveAspectRatio: 'xMidYMid slice',
-      },
-    };
-
-    return Options;
-  };
-
   return (
     <Container>
       <Contents>
-        <Title>Lorem ipsum dolor sit amet </Title>
-        <SubTitle>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SubTitle>
+        <Title>Strengths</Title>
+        <SubTitle>세가지의 키워드로 말하는 '나'</SubTitle>
 
         <ContentsLayout>
-          {new Array(3).fill(0).map((obj: any, inx: number) => (
+          {STRENGHTS_DATA.map((obj: any, inx: number) => (
             <ContentsBox key={`box-${inx}`}>
               <ImageLayout>
-                <Lottie options={lottieOptions(inx)} />
+                <Lottie
+                  options={{
+                    animationData: obj.iconJson,
+                    loop: true,
+                    autoplay: true,
+                    rendererSettings: {
+                      className: 'lottie=icons', // svg에 적용
+                      preserveAspectRatio: 'xMidYMid slice',
+                    },
+                  }}
+                />
               </ImageLayout>
-              <BoxTitle>Lorem ipsum dolor</BoxTitle>
-              <BoxText>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </BoxText>
+              <BoxTitle>{obj.title}</BoxTitle>
+              <BoxText>{obj.description}</BoxText>
             </ContentsBox>
           ))}
         </ContentsLayout>
@@ -99,7 +82,6 @@ const ContentsLayout = styled.div`
 const ContentsBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   flex: 0 0 calc(100% / 3);
   height: 100%;
@@ -120,6 +102,7 @@ const ImageLayout = styled.div`
 const BoxTitle = styled.p`
   font-size: 32px;
   font-weight: 700;
+  margin-bottom: 20px;
 `;
 
 const BoxText = styled.p`

@@ -25,3 +25,10 @@
   font-weight: 800;
   src: url('fonts/NotoSansKR-Black.otf') format('OpenType');
 }
+
+@font-face {
+  font-family: Angmuburi;
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/116angmuburi.otf') format('OpenType');
+}

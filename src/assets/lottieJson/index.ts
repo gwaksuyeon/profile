@@ -1,6 +1,6 @@
 import DeveloperJson from 'assets/lottieJson/developer.json';
 import SuccessJson from 'assets/lottieJson/success.json';
-import ComunicationJson from 'assets/lottieJson/comunication.json';
+import CoummunicationJson from 'assets/lottieJson/communication.json';
 
 import ArrowJson from 'assets/lottieJson/arrow.json';
 import BgCircle1Json from 'assets/lottieJson/bg_circle1.json';
@@ -14,7 +14,7 @@ import BgTriangleJson from 'assets/lottieJson/bg_triangle.json';
 export {
   DeveloperJson,
   SuccessJson,
-  ComunicationJson,
+  CoummunicationJson,
   ArrowJson,
   BgCircle1Json,
   BgCircle2Json,

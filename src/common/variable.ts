@@ -15,6 +15,12 @@ import {
   SvgZeplin,
 } from 'assets/svg';
 
+import {
+  DeveloperJson,
+  SuccessJson,
+  CoummunicationJson,
+} from 'assets/lottieJson';
+
 export const ROOT_ROUTE = {
   MAIN: '/',
 };
@@ -154,5 +160,25 @@ export const PROJECT_DATA = [
     isAnimationPc: false,
     isAnimationMobile: true,
     link: '',
+  },
+];
+
+export const STRENGHTS_DATA = [
+  {
+    iconJson: DeveloperJson,
+    title: '디자인도 개발도 가능',
+    description:
+      '퍼블리셔의 경험과 프론트엔드의 경험으로 디자인도, 개발도 가능합니다.',
+  },
+  {
+    iconJson: SuccessJson,
+    title: '긍정적인 마인드',
+    description:
+      '세상을 꽃밭으로 본다는 말을 들을 정도로 긍정적인 마인드를 가지고 있습니다.',
+  },
+  {
+    iconJson: CoummunicationJson,
+    title: '소통을 우선시',
+    description: '상대방의 의견을 중요시하며, 사람들과 소통하는 것을 즐깁니다',
   },
 ];
