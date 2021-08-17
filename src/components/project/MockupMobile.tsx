@@ -4,11 +4,16 @@ import styled, { keyframes } from 'styled-components';
 interface Props {
   isAnimation: boolean;
   imageUrlList: string[];
+  onClickLink?: () => void;
 }
 
-const MockupMobile: React.FC<Props> = ({ isAnimation, imageUrlList }) => {
+const MockupMobile: React.FC<Props> = ({
+  isAnimation,
+  imageUrlList,
+  onClickLink = () => {},
+}) => {
   return (
-    <Container>
+    <Container onClick={onClickLink}>
       <Header>
         <Circle color={'#eb770e'} />
         <Circle color={'#e7cc1b'} />

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import loadable from '@loadable/component';
-import Lottie from 'react-lottie';
-
-import { ArrowJson } from 'assets/lottieJson';
 
 const Pattern = loadable(() => import('components/project/Pattern'));
 const MockupPC = loadable(() => import('components/project/MockupPc'));
@@ -35,34 +32,20 @@ const Project: React.FC<Props> = ({
             <MockupPC
               isAnimation={data.isAnimationPc}
               imageUrlList={data.imageUrlListPc}
+              onClickLink={onClickLink}
             />
           )}
           {data.imageUrlListMobile.length > 0 && (
             <MockupMobile
               isAnimation={data.isAnimationMobile}
               imageUrlList={data.imageUrlListMobile}
+              onClickLink={onClickLink}
             />
           )}
         </MockUpLayout>
-        <TextLayout direction={direction}>
+        <TextLayout direction={direction} onClick={onClickLink}>
           <TitleLayout direction={direction}>
             <Title>{data.title}</Title>
-
-            {data.link && (
-              <LinkButton onClick={onClickLink}>
-                <Lottie
-                  options={{
-                    animationData: ArrowJson,
-                    loop: true,
-                    autoplay: true,
-                    rendererSettings: {
-                      className: 'lottie=icons', // svg에 적용
-                      preserveAspectRatio: 'xMidYMid slice',
-                    },
-                  }}
-                />
-              </LinkButton>
-            )}
           </TitleLayout>
           <ProjectDate>{data.date}</ProjectDate>
           <Description>{data.description}</Description>
@@ -129,6 +112,7 @@ const MockUpLayout = styled.div<any>`
   margin-right: 10%;
   margin: ${(props: any) =>
     props.direction === 'left' ? '0 10% 0 0' : '0 0 0 10%'};
+  cursor: pointer;
 
   @media (max-width: 768px) {
     margin: ${(props: any) =>
@@ -144,6 +128,7 @@ const MockUpLayout = styled.div<any>`
 const TextLayout = styled.div<any>`
   flex: 1 1 auto;
   text-align: ${(props: any) => props.direction};
+  cursor: pointer;
 
   @media (max-width: 768px) {
     text-align: center;
@@ -171,22 +156,9 @@ const TitleLayout = styled.div<any>`
 const Title = styled.p`
   font-size: 48px;
   font-weight: 800;
-  margin-right: 2%;
 
   @media (max-width: 768px) {
     font-size: 28px;
-  }
-`;
-
-const LinkButton = styled.div`
-  width: 60px;
-  height: 60px;
-  transform: rotate(-90deg);
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
   }
 `;
 
