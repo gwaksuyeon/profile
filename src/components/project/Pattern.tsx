@@ -87,6 +87,10 @@ const SvgLayout = styled.div`
   svg {
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default Pattern;

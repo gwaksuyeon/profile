@@ -90,6 +90,15 @@ const BackGround = styled.div<any>`
   background: #f6f4e6;
   transform: ${(props: any) =>
     props.direction === 'left' ? 'skewX(-30deg)' : 'skewX(30deg)'};
+
+  @media (max-width: 768px) {
+    transform: ${(props: any) =>
+      props.direction === 'left' ? 'skewX(-10deg)' : 'skewX(10deg)'};
+  }
+
+  @media (max-width: 480px) {
+    transform: skewX(-0deg);
+  }
 `;
 
 const Contents = styled.div<any>`
@@ -102,6 +111,15 @@ const Contents = styled.div<any>`
   height: 70%;
   max-width: 1280px;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    flex-direction: column;
+  }
 `;
 
 const MockUpLayout = styled.div<any>`
@@ -111,11 +129,29 @@ const MockUpLayout = styled.div<any>`
   margin-right: 10%;
   margin: ${(props: any) =>
     props.direction === 'left' ? '0 10% 0 0' : '0 0 0 10%'};
+
+  @media (max-width: 768px) {
+    margin: ${(props: any) =>
+      props.direction === 'left' ? '0 7% 0 0' : '0 0 0 7%'};
+  }
+
+  @media (max-width: 768px) {
+    max-width: 60%;
+    margin: 0 0 20px 0;
+  }
 `;
 
 const TextLayout = styled.div<any>`
   flex: 1 1 auto;
   text-align: ${(props: any) => props.direction};
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    flex: initial;
+  }
 `;
 
 const TitleLayout = styled.div<any>`
@@ -124,12 +160,22 @@ const TitleLayout = styled.div<any>`
     props.direction === 'left' ? 'flex-start' : 'flex-end'};
   align-items: flex-end;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 `;
 
 const Title = styled.p`
   font-size: 48px;
   font-weight: 800;
   margin-right: 2%;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const LinkButton = styled.div`
@@ -137,12 +183,22 @@ const LinkButton = styled.div`
   height: 60px;
   transform: rotate(-90deg);
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const ProjectDate = styled.p`
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
 `;
 
 const Description = styled.p`
@@ -150,6 +206,15 @@ const Description = styled.p`
   color: #52575d;
   line-height: 1.2;
   white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
 `;
 
 export default Project;

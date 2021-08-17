@@ -50,6 +50,15 @@ const Title = styled.p`
   max-width: 1280px;
   font-size: 60px;
   font-weight: 800;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    font-size: 36px;
+  }
 `;
 
 export default End;

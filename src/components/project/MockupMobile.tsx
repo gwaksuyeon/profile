@@ -72,6 +72,18 @@ const Container = styled.div`
   border-radius: 2%;
   overflow: hidden;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 12vw;
+    height: 15vh;
+    bottom: -5%;
+  }
+
+  @media (max-width: 480px) {
+    width: 20vw;
+    height: 15vh;
+    bottom: -5%;
+  }
 `;
 
 const Header = styled.div`

@@ -17,6 +17,10 @@ const Text = styled.p`
   font-weight: 300;
   color: #52575d;
   white-space: pre-line;
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+  }
 `;
 
 export default CopyRight;

@@ -68,6 +68,10 @@ const PageText = styled.p<any>`
   transition: all 0.1s ease-in-out;
   cursor: default;
   user-select: none;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const PageCircle = styled.p<any>`

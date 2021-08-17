@@ -30,12 +30,26 @@ const MockupPC: React.FC<Props> = ({ isAnimation, imageUrlList }) => {
 };
 
 const ViewAnimation = keyframes`
-    0 {
+    0% {
         transform: translateY(0);
    }
 
     50% {
         transform: translateY(-80%);
+    }
+
+    100% {
+        transform: translateY(0);
+   }
+`;
+
+const ViewAnimation768 = keyframes`
+    0% {
+        transform: translateY(0);
+   }
+
+    50% {
+        transform: translateY(-45%);
     }
 
     100% {
@@ -89,6 +103,11 @@ const Image = styled.img<any>`
 
   &:hover {
     animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    animation: ${(props: any) => props.isAnimation && ViewAnimation768} 30s
+      linear infinite;
   }
 `;
 

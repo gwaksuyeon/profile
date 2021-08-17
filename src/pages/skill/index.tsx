@@ -20,6 +20,20 @@ const Skill: React.FC<Props> = ({ isAnimation }) => {
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   const communicationSetting = {
@@ -31,6 +45,20 @@ const Skill: React.FC<Props> = ({ isAnimation }) => {
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
@@ -39,10 +67,10 @@ const Skill: React.FC<Props> = ({ isAnimation }) => {
       <CircleTop isAnimation={isAnimation} />
 
       <Contents>
-        <Title>Skill & Communication</Title>
+        <Title>Skills & Communication</Title>
 
         <ContentsLayout>
-          <SubTitle>Skill</SubTitle>
+          <SubTitle>Skills</SubTitle>
           <SliderLayout>
             <Slider {...skillSetting}>
               {SKILL_DATA.map((obj: any, inx: number) => (
@@ -97,6 +125,30 @@ const CircleAnimationEnd = keyframes`
   }
 `;
 
+const CircleAnimation768 = keyframes`
+  0 {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    width: 60vw; 
+    padding-bottom: 60vw;
+  }
+`;
+
+const CircleAnimationEnd768 = keyframes`
+  0 {
+    width: 60vw;
+    padding-bottom: 60vw;
+  }
+
+  100% {
+    width: 0;
+    padding-bottom: 0;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -120,6 +172,14 @@ const Circle = styled.div<any>`
       props.isAnimation ? CircleAnimation : CircleAnimationEnd}
     1s ease-in-out 0s forwards;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    bottom: -20vh;
+    left: -20vw;
+    animation: ${(props: any) =>
+        props.isAnimation ? CircleAnimation768 : CircleAnimationEnd768}
+      1s ease-in-out 0s forwards;
+  }
 `;
 
 const CircleTop = styled.div<any>`
@@ -134,6 +194,14 @@ const CircleTop = styled.div<any>`
       props.isAnimation ? CircleAnimation : CircleAnimationEnd}
     1s ease-in-out 0s forwards;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    top: -20vh;
+    right: -20vw;
+    animation: ${(props: any) =>
+        props.isAnimation ? CircleAnimation768 : CircleAnimationEnd768}
+      1s ease-in-out 0s forwards;
+  }
 `;
 
 const Contents = styled.div`
@@ -150,6 +218,15 @@ const Title = styled.p`
   font-weight: 800;
   text-align: center;
   margin-bottom: 100px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ContentsLayout = styled.div`
@@ -165,6 +242,10 @@ const SubTitle = styled.p`
   font-weight: 700;
   color: #52575d;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 const SliderLayout = styled.div`
@@ -177,6 +258,13 @@ const SliderLayout = styled.div`
   .slick-slide,
   .slick-slide > div {
     height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .slick-slide {
+      padding: 0 8px;
+      box-sizing: border-box;
+    }
   }
 `;
 
@@ -217,6 +305,16 @@ const IconLayout = styled.div`
 
     p {
       opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      width: 100%;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 `;

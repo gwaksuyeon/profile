@@ -57,6 +57,30 @@ const CircleAnimationEnd = keyframes`
   }
 `;
 
+const CircleAnimation768 = keyframes`
+  0 {
+    width: 0;
+    padding-bottom: 0;
+  }
+
+  100% {
+    width: 110vw;
+    padding-bottom: 110vw;
+  }
+`;
+
+const CircleAnimationEnd768 = keyframes`
+  0 {
+    width: 110vw;
+    padding-bottom: 110vw;
+  }
+
+  100% {
+    width: 0;
+    padding-bottom: 0;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -78,6 +102,14 @@ const Circle = styled.div<any>`
   animation: ${(props: any) =>
       props.isAnimation ? CircleAnimation : CircleAnimationEnd}
     1s ease-in-out 0s forwards;
+
+  @media (max-width: 768px) {
+    top: -25vw;
+    right: -45vw;
+    animation: ${(props: any) =>
+        props.isAnimation ? CircleAnimation768 : CircleAnimationEnd768}
+      1s ease-in-out 0s forwards;
+  }
 `;
 
 const Contents = styled.div`
@@ -87,11 +119,25 @@ const Contents = styled.div`
   width: 50%;
   max-width: 1280px;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    flex-direction: column-reverse;
+  }
 `;
 
 const TextLayout = styled.div`
   text-align: right;
   margin-right: 5%;
+
+  @media (max-width: 480px) {
+    text-align: center;
+    margin-right: 0;
+  }
 `;
 
 const NameDescription = styled.p`
@@ -106,12 +152,25 @@ const NameDescription = styled.p`
   span {
     color: #fddb3a;
   }
+
+  @media (max-width: 480px) {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 `;
 
 const Title = styled.p`
   font-size: 36px;
   font-weight: 700;
   white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const ImageLayout = styled.div`
@@ -124,6 +183,13 @@ const ImageLayout = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+
+  @media (max-width: 480px) {
+    width: 40%;
+    flex: 0 0 40%;
+    padding-bottom: 40%;
+    margin-bottom: 20px;
   }
 `;
 
