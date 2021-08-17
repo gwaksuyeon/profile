@@ -5,17 +5,21 @@ import Lottie from 'react-lottie';
 
 import { ArrowJson } from 'assets/lottieJson';
 
-const MockupPC = loadable(() => import('components/responsive/MockupPc'));
-const MockupMobile = loadable(
-  () => import('components/responsive/MockupMobile'),
-);
+const Pattern = loadable(() => import('components/project/Pattern'));
+const MockupPC = loadable(() => import('components/project/MockupPc'));
+const MockupMobile = loadable(() => import('components/project/MockupMobile'));
 
 interface Props {
-  direction?: 'left' | 'right';
   data: any;
+  direction?: 'left' | 'right';
+  isAnimation: boolean;
 }
 
-const Project: React.FC<Props> = ({ direction = 'left', data }) => {
+const Project: React.FC<Props> = ({
+  data,
+  direction = 'left',
+  isAnimation,
+}) => {
   const onClickLink = () => {
     window.open(data.link);
   };
@@ -23,6 +27,8 @@ const Project: React.FC<Props> = ({ direction = 'left', data }) => {
   return (
     <Container>
       <BackGround direction={direction} />
+      <Pattern direction={direction} isAnimation={isAnimation} />
+
       <Contents direction={direction}>
         <MockUpLayout direction={direction}>
           {data.imageUrlListPc.length > 0 && (
@@ -73,6 +79,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
   background: #fff;
 `;
 

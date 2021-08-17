@@ -86,10 +86,6 @@ const ContentsBox = styled.div`
   flex: 0 0 calc(100% / 3);
   height: 100%;
   padding: 0 2%;
-
-  & ~ & {
-    border-left: 1px solid #52575d;
-  }
 `;
 
 const ImageLayout = styled.div`

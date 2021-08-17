@@ -179,6 +179,6 @@ export const STRENGHTS_DATA = [
   {
     iconJson: CoummunicationJson,
     title: '소통을 우선시',
-    description: '상대방의 의견을 중요시하며, 사람들과 소통하는 것을 즐깁니다',
+    description: '상대방의 의견을 중요시하며, 사람들과 소통하는 것을 즐깁니다.',
   },
 ];

@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const End: React.FC = () => {
-  const word = '<Lorem ipsum dolor sit amet consectetur adipisicing elit./>';
+interface Props {
+  isAnimation: boolean;
+}
+
+const End: React.FC<Props> = ({ isAnimation }) => {
+  const word = '<계속해서 성장하고, 즐겁게 일하는 개발자./>';
   const [text, setText] = useState<string>('');
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
+    if (!isAnimation) {
+      setText('');
+      setCount(0);
+      return;
+    }
+
     const interval = setInterval(() => {
       setText(text + word[count]);
       setCount(count + 1);
@@ -17,7 +27,7 @@ const End: React.FC = () => {
     }
 
     return () => clearInterval(interval);
-  });
+  }, [isAnimation, count, text]);
 
   return (
     <Container>

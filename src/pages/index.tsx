@@ -33,11 +33,13 @@ const Pages: React.FC = () => {
         {PROJECT_DATA.map((obj: any, inx: number) => (
           <Project
             key={`project-${inx}`}
+            isAnimation={currentPage === inx + 3}
             direction={inx % 2 === 0 ? 'right' : 'left'}
             data={obj}
           />
         ))}
-        <End />
+
+        <End isAnimation={currentPage === 6} />
       </ReactPageScroller>
 
       <CopyRight />
