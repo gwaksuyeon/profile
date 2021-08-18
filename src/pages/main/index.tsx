@@ -24,7 +24,7 @@ const Main: React.FC<Props> = ({ isAnimation }) => {
           </NameDescription>
           <Title>
             빼어나고, 아름다운 코드를 위해 노력하는{'\n'}
-            프론트엔드 개발자 곽수연입니다 테스트
+            프론트엔드 개발자 곽수연입니다
           </Title>
         </TextLayout>
 
