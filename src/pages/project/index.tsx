@@ -99,7 +99,7 @@ const Contents = styled.div<any>`
     width: 80%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     width: 90%;
     flex-direction: column;
   }
@@ -119,7 +119,7 @@ const MockUpLayout = styled.div<any>`
       props.direction === 'left' ? '0 7% 0 0' : '0 0 0 7%'};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     max-width: 60%;
     margin: 0 0 20px 0;
   }
@@ -183,7 +183,7 @@ const Description = styled.p`
     font-size: 24px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     font-size: 20px;
     margin-bottom: 4px;
   }
