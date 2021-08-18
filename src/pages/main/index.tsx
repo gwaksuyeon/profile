@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import loadable from '@loadable/component';
+import Lottie from 'react-lottie';
+
+import { ScrollJson } from 'assets/lottieJson';
 
 const Background = loadable(() => import('components/main/background'));
 
@@ -29,6 +32,22 @@ const Main: React.FC<Props> = ({ isAnimation }) => {
           <img src={require('assets/image/avatar.png').default} alt="avatar" />
         </ImageLayout>
       </Contents>
+
+      <ScrollIcon>
+        <Lottie
+          options={{
+            animationData: ScrollJson,
+            loop: true,
+            autoplay: true,
+            rendererSettings: {
+              className: 'lottie=icons', // svg에 적용
+              preserveAspectRatio: 'xMidYMid slice',
+            },
+          }}
+        />
+
+        <p>Scroll Down</p>
+      </ScrollIcon>
     </Container>
   );
 };
@@ -190,6 +209,43 @@ const ImageLayout = styled.div`
     flex: 0 0 40%;
     padding-bottom: 40%;
     margin-bottom: 20px;
+  }
+`;
+
+const ScrollIcon = styled.div`
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  > div {
+    width: 5vw !important;
+  }
+
+  p {
+    font-weight: 700;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    > div {
+      width: 8vw !important;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    > div {
+      width: 10vw !important;
+    }
+
+    p {
+      font-size: 10px;
+    }
   }
 `;
 
